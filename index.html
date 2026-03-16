@@ -1,28 +1,232 @@
 <!DOCTYPE html>
-<html>
+<html lang="el">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lydia Miligkou</title>
-
 <style>
-body{
-background:black;
-color:white;
-font-family:serif;
-margin:0;
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-letter-spacing:2px;
+* {
+box-sizing: border-box;
+}
+
+html, body {
+margin: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+background: black;
+font-family: serif;
+}
+
+body {
+position: relative;
+color: white;
+}
+
+/* Big same photo as blue background */
+.bg {
+position: fixed;
+inset: 0;
+background:
+linear-gradient(rgba(20, 40, 120, 0.45), rgba(20, 40, 120, 0.45)),
+url("iroes.jpg") center center / cover no-repeat;
+filter: saturate(1.1) contrast(1.02);
+transform: scale(1.05);
+}
+
+/* dark veil so text stays readable */
+.bg::after {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(
+to right,
+rgba(0, 0, 0, 0.18) 0%,
+rgba(0, 0, 0, 0.28) 40%,
+rgba(0, 0, 0, 0.52) 100%
+);
+}
+
+.layout {
+position: relative;
+z-index: 2;
+width: 100%;
+height: 100%;
+}
+
+/* Smaller photo top left */
+.photo-card {
+position: absolute;
+top: 32px;
+left: 32px;
+width: min(36vw, 430px);
+aspect-ratio: 4 / 5;
+overflow: hidden;
+background: rgba(255,255,255,0.04);
+box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.photo-card img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+opacity: 0.9;
+}
+
+/* Right-side credit roll */
+.credits-window {
+position: absolute;
+top: 0;
+right: 0;
+width: min(42vw, 560px);
+height: 100%;
+overflow: hidden;
+padding-right: 36px;
+padding-left: 24px;
+pointer-events: none;
+}
+
+.credits {
+position: absolute;
+width: 100%;
+bottom: -140%;
+color: rgba(255,255,255,0.9);
+text-align: left;
+font-size: clamp(18px, 1.6vw, 28px);
+line-height: 1.75;
+letter-spacing: 0.02em;
+text-shadow: 0 2px 14px rgba(0,0,0,0.45);
+animation: roll 55s linear infinite;
+}
+
+.credits p {
+margin: 0 0 0.45em 0;
+}
+
+@keyframes roll {
+from {
+transform: translateY(0);
+}
+to {
+transform: translateY(-240%);
+}
+}
+
+/* subtle title top left over photo */
+.site-title {
+position: absolute;
+left: 48px;
+top: 48px;
+z-index: 3;
+font-size: 12px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+mix-blend-mode: screen;
+}
+
+@media (max-width: 900px) {
+.photo-card {
+width: 48vw;
+top: 20px;
+left: 20px;
+}
+
+.credits-window {
+width: 50vw;
+padding-right: 18px;
+padding-left: 12px;
+}
+}
+
+@media (max-width: 680px) {
+.photo-card {
+width: calc(100vw - 40px);
+height: 42vh;
+aspect-ratio: auto;
+}
+
+.credits-window {
+width: 100%;
+padding: 0 20px;
+top: 46vh;
+height: 54vh;
+}
+
+.credits {
+font-size: 18px;
+}
+
+.site-title {
+left: 32px;
+top: 32px;
+}
 }
 </style>
-
 </head>
-
 <body>
+<div class="bg"></div>
 
-<h1>Lydia Miligkou</h1>
+<div class="layout">
+<div class="site-title">Lydia Miligkou</div>
 
+<div class="photo-card">
+<img src="iroes.jpg" alt="Placeholder image" />
+</div>
+
+<div class="credits-window">
+<div class="credits">
+<p>Ήρωες, άπαρτα βουνά</p>
+<p>Ήρωες, με δώδεκα ζωές</p>
+<p>Κάστρα του Ολύμπου</p>
+<p>Και του Παρνασσού φαντάσματα</p>
+<p>Ήρωες μες στα χαλάσματα</p>
+<p>Κάστρα του Ολύμπου</p>
+<p>Και του Παρνασσού φαντάσματα</p>
+<p>Ήρωες μες στα χαλάσματα</p>
+<p>Αίματα, κόκκινο νερό</p>
+<p>Αίματα, ποτάμι βουερό</p>
+<p>Πυρ στην Αλαμάνα</p>
+<p>Και φωτιά στο Γοργοπόταμο</p>
+<p>Και φωτιά στο Γοργοπόταμο</p>
+<p>Πυρ στην Αλαμάνα</p>
+<p>Και φωτιά στο Γοργοπόταμο</p>
+<p>Και φωτιά στο Γοργοπόταμο</p>
+<p>Εμπρός αδέρφια εμπρός</p>
+<p>Κι είναι μαζί μας ο λαός</p>
+<p>Στα πιο μεγάλα μας τα κατορθώματα</p>
+<p>Μες στις πέτρες και στα χώματα</p>
+<p>Θάνατος, μαύρος αδερφός</p>
+<p>Θάνατος, θα γίνω αθάνατος</p>
+<p>Πυρ στην Αλαμάνα</p>
+<p>Και φωτιά στο Γοργοπόταμο</p>
+<p>Και φωτιά στο Γοργοπόταμο</p>
+<p>Πυρ στην Αλαμάνα</p>
+<p>Και φωτιά στο Γοργοπόταμο</p>
+<p>Και φωτιά στο Γοργοπόταμο</p>
+<p>Αέρας στις κορφές</p>
+<p>Μαύρο φεγγάρι στις καρδιές</p>
+<p>Έλα και πάρ' τη μόνος σου τη λευτεριά</p>
+<p>Με τραγούδια, όπλα και σπαθιά, έι!</p>
+<p>Με τραγούδια, όπλα και σπαθιά, έι!</p>
+<p>Με τραγούδια, όπλα και σπαθιά, έι!</p>
+<p>Με τραγούδια, όπλα και σπαθιά, έι!</p>
+<p>Με τραγούδια, όπλα και σπαθιά!</p>
+
+<!-- repeat once for smoother loop -->
+<p style="margin-top: 2em;">Ήρωες, άπαρτα βουνά</p>
+<p>Ήρωες, με δώδεκα ζωές</p>
+<p>Κάστρα του Ολύμπου</p>
+<p>Και του Παρνασσού φαντάσματα</p>
+<p>Ήρωες μες στα χαλάσματα</p>
+<p>Αίματα, κόκκινο νερό</p>
+<p>Πυρ στην Αλαμάνα</p>
+<p>Εμπρός αδέρφια εμπρός</p>
+<p>Θάνατος, θα γίνω αθάνατος</p>
+<p>Αέρας στις κορφές</p>
+<p>Με τραγούδια, όπλα και σπαθιά!</p>
+</div>
+</div>
+</div>
 </body>
 </html>
