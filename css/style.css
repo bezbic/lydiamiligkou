@@ -1,7 +1,7 @@
 :root {
---bg: #050505;
---text: #f3f0e8;
---muted: rgba(243, 240, 232, 0.7);
+--bg: #f3efe6;
+--text: #1f1d1a;
+--muted: rgba(31, 29, 26, 0.65);
 }
 
 * {
