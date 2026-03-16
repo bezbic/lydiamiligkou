@@ -1,295 +1,57 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lydia Miligkou</title>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-box-sizing:border-box;
-}
-
-html,body{
-margin:0;
-height:100%;
-width:100%;
-overflow:hidden;
-background:black;
-font-family:"DM Sans", sans-serif;
-color:white;
-}
-
-/* BLURRED BACKGROUND */
-
-.bg{
-position:fixed;
-inset:0;
-background:url("iroes.jpg") center/cover no-repeat;
-filter:blur(30px) brightness(0.7);
-transform:scale(1.15);
-z-index:0;
-}
-
-/* PAGE LAYER */
-
-.page{
-position:relative;
-z-index:2;
-height:100%;
-width:100%;
-}
-
-/* SMALL TITLE */
-
-.site-title{
-position:absolute;
-top:26px;
-left:32px;
-font-size:12px;
-letter-spacing:0.35em;
-text-transform:uppercase;
-color:rgba(255,255,255,0.65);
-}
-
-/* PHOTO */
-
-.photo{
-position:absolute;
-top:60px;
-left:60px;
-width:420px;
-aspect-ratio:4/5;
-overflow:hidden;
-box-shadow:0 20px 70px rgba(0,0,0,0.35);
-}
-
-.photo img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-/* LYRICS AREA */
-
-.credits-window{
-position:absolute;
-right:0;
-top:0;
-width:60vw;
-height:100vh;
-padding:60px;
-pointer-events:none;
-}
-
-.credits{
-position:absolute;
-bottom:-150%;
-right:60px;
-width:700px;
-
-font-size:34px;
-line-height:1.25;
-letter-spacing:0.02em;
-
-animation:roll 120s linear infinite;
-}
-
-.credits p{
-margin:0 0 12px 0;
-}
-
-@keyframes roll{
-
-from{
-transform:translateY(0);
-}
-
-to{
-transform:translateY(-200%);
-}
-
-}
-
-/* BLACK SAGAPO BAR */
-
-.subtitle-bar{
-
-position:absolute;
-
-left:0;
-
-/* MOVED HIGHER */
-bottom:140px;
-
-width:100%;
-
-height:110px;
-
-background:rgba(0,0,0,0.75);
-
-display:flex;
-align-items:center;
-
-overflow:hidden;
-
-z-index:5;
-
-border-top:1px solid rgba(255,255,255,0.08);
-
-}
-
-/* SCROLLING TEXT */
-
-.subtitle-track{
-
-white-space:nowrap;
-
-font-size:64px;
-
-letter-spacing:0.25em;
-
-animation:scroll 22s linear infinite;
-
-padding-left:100%;
-
-}
-
-.subtitle-track span{
-
-margin-right:1.2em;
-
-}
-
-@keyframes scroll{
-
-from{
-transform:translateX(0);
-}
-
-to{
-transform:translateX(-50%);
-}
-
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.photo{
-width:70vw;
-left:15vw;
-top:70px;
-}
-
-.credits-window{
-width:100%;
-padding:20px;
-}
-
-.credits{
-right:20px;
-width:80vw;
-font-size:26px;
-}
-
-.subtitle-bar{
-bottom:120px;
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-
-<div class="bg"></div>
-
-<div class="page">
-
-<div class="site-title">LYDIA MILIGKOU</div>
-
-<div class="photo">
-<img src="iroes.jpg">
+<header class="site-nav">
+<div class="site-nav__left">
+<a href="index.html" class="site-nav__brand">LYDIA MILIGKOU</a>
 </div>
 
-<div class="credits-window">
+<nav class="site-nav__right">
+<a href="about.html" class="site-nav__link">ABOUT</a>
+<a href="contact.html" class="site-nav__link">CONTACT</a>
+</nav>
+</header>
 
-<div class="credits">
-
-<p>Ήρωες, άπαρτα βουνά</p>
-<p>Ήρωες, με δώδεκα ζωές</p>
-<p>Κάστρα του Ολύμπου</p>
-<p>Και του Παρνασσού φαντάσματα</p>
-<p>Ήρωες μες στα χαλάσματα</p>
-
-<br>
-
-<p>Αίματα, κόκκινο νερό</p>
-<p>Αίματα, ποτάμι βουερό</p>
-<p>Πυρ στην Αλαμάνα</p>
-<p>Και φωτιά στο Γοργοπόταμο</p>
-
-<br>
-
-<p>Εμπρός αδέρφια εμπρός</p>
-<p>Κι είναι μαζί μας ο λαός</p>
-<p>Στα πιο μεγάλα μας τα κατορθώματα</p>
-<p>Μες στις πέτρες και στα χώματα</p>
-
-<br>
-
-<p>Θάνατος, μαύρος αδερφός</p>
-<p>Θάνατος, θα γίνω αθάνατος</p>
-
-<br>
-
-<p>Αέρας στις κορφές</p>
-<p>Μαύρο φεγγάρι στις καρδιές</p>
-
-<br>
-
-<p>Έλα και πάρ' τη μόνος σου τη λευτεριά</p>
-<p>Με τραγούδια, όπλα και σπαθιά</p>
-
-<br><br>
-
-<!-- repeat for infinite scroll -->
-
-<p>Ήρωες, άπαρτα βουνά</p>
-<p>Ήρωες, με δώδεκα ζωές</p>
-<p>Κάστρα του Ολύμπου</p>
-<p>Και του Παρνασσού φαντάσματα</p>
-
+<main class="canvas">
+<!-- Work 1 -->
+<a
+href="projects/sweat-lack-elevated-grounds.html"
+class="artwork artwork--one"
+aria-label="Sweat, lack and elevated grounds"
+>
+<img
+src="images/work1-thumb.jpg"
+alt="Sweat, lack and elevated grounds"
+class="artwork__image"
+/>
+<div class="artwork__meta">
+<p class="artwork__title">Sweat, lack and elevated grounds</p>
+<p class="artwork__year">2022</p>
 </div>
+</a>
 
+<!-- Work 2 -->
+<a
+href="projects/second-work.html"
+class="artwork artwork--two"
+aria-label="Second work"
+>
+<img
+src="images/work2-thumb.jpg"
+alt="Second work"
+class="artwork__image"
+/>
+<div class="artwork__meta">
+<p class="artwork__title">Second work title</p>
+<p class="artwork__year">2023</p>
 </div>
-
-<div class="subtitle-bar">
-
-<div class="subtitle-track">
-
-<span>Σ’ αγαπώ</span>
-<span>Σ’ αγαπώ</span>
-<span>Σ’ αγαπώ</span>
-<span>Σ’ αγαπώ</span>
-<span>Σ’ αγαπώ</span>
-<span>Σ’ αγαπώ</span>
-<span>Σ’ αγαπώ</span>
-<span>Σ’ αγαπώ</span>
-
-</div>
-
-</div>
-
-</div>
-
+</a>
+</main>
 </body>
 </html>
