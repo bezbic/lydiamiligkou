@@ -1,9 +1,19 @@
+
+Sebastian Blazinarić <sebastian.blazinaric@gmail.com>
+22:08 (0 minutes ago)
+to me
+
 <!DOCTYPE html>
 <html lang="el">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lydia Miligkou</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
 * {
 box-sizing: border-box;
@@ -15,52 +25,70 @@ width: 100%;
 height: 100%;
 overflow: hidden;
 background: black;
-font-family: serif;
 }
 
 body {
 position: relative;
 color: white;
+font-family: "Cormorant Garamond", serif;
+}
+
+/* FULL BLURRED BACKGROUND */
+.bg-wrap {
+position: fixed;
+inset: 0;
+overflow: hidden;
+z-index: 0;
+background: black;
 }
 
 .bg {
-position: fixed;
-inset: 0;
-background:url("iroes.jpg") center/cover no-repeat;
-filter: blur(35px) brightness(0.6);
-transform: scale(1.1);
+position: absolute;
+inset: -4%;
+background: url("photo.jpg") center center / cover no-repeat;
+filter: blur(28px) brightness(0.68) saturate(0.95);
+transform: scale(1.12);
 }
 
-/* dark veil so text stays readable */
-.bg::after {
+.bg-wrap::after {
 content: "";
 position: absolute;
 inset: 0;
-background: linear-gradient(
-to right,
-rgba(0, 0, 0, 0.18) 0%,
-rgba(0, 0, 0, 0.28) 40%,
-rgba(0, 0, 0, 0.52) 100%
-);
+background:
+linear-gradient(to bottom, rgba(0,0,0,0.14), rgba(0,0,0,0.18)),
+linear-gradient(to right, rgba(0,0,0,0.18), rgba(0,0,0,0.08) 45%, rgba(0,0,0,0.32));
 }
 
-.layout {
+.page {
 position: relative;
 z-index: 2;
 width: 100%;
 height: 100%;
 }
 
-/* Smaller photo top left */
+/* TINY TITLE */
+.site-title {
+position: absolute;
+top: 22px;
+left: 24px;
+font-size: 11px;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: rgba(255,255,255,0.65);
+z-index: 4;
+}
+
+/* BIGGER PHOTO TOP LEFT */
 .photo-card {
 position: absolute;
-top: 32px;
-left: 32px;
-width: min(36vw, 430px);
+top: 48px;
+left: 48px;
+width: min(34vw, 520px);
 aspect-ratio: 4 / 5;
 overflow: hidden;
-background: rgba(255,255,255,0.04);
-box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+z-index: 3;
+box-shadow: 0 24px 80px rgba(0,0,0,0.34);
+background: rgba(255,255,255,0.03);
 }
 
 .photo-card img {
@@ -68,163 +96,249 @@ width: 100%;
 height: 100%;
 object-fit: cover;
 display: block;
-opacity: 0.9;
 }
 
-/* Right-side credit roll */
+/* WIDER TEXT FIELD ON RIGHT */
 .credits-window {
 position: absolute;
 top: 0;
 right: 0;
-width: min(42vw, 560px);
-height: 100%;
-overflow: hidden;
-padding-right: 36px;
-padding-left: 24px;
+width: min(58vw, 880px);
+height: calc(100vh - 112px);
+padding: 36px 42px 0 42px;
+z-index: 4;
 pointer-events: none;
 }
 
 .credits {
 position: absolute;
-width: 100%;
+width: min(100%, 760px);
+right: 42px;
 bottom: -140%;
-color: rgba(255,255,255,0.9);
 text-align: left;
-font-size: clamp(18px, 1.6vw, 28px);
-line-height: 1.75;
-letter-spacing: 0.02em;
-text-shadow: 0 2px 14px rgba(0,0,0,0.45);
-animation: roll 120s linear infinite;
+color: rgba(255,255,255,0.92);
+font-size: clamp(28px, 2.2vw, 42px);
+line-height: 1.26;
+font-weight: 400;
+letter-spacing: 0.01em;
+text-shadow: 0 3px 22px rgba(0,0,0,0.42);
+animation: vertical-roll 120s linear infinite;
 }
 
 .credits p {
-margin: 0 0 0.45em 0;
+margin: 0 0 0.22em 0;
 }
 
-@keyframes roll {
+@keyframes vertical-roll {
 from {
 transform: translateY(0);
 }
 to {
-transform: translateY(-240%);
+transform: translateY(-200%);
 }
 }
 
-/* subtle title top left over photo */
-.site-title {
+/* BOTTOM BLACK RIBBON */
+.subtitle-bar {
 position: absolute;
-left: 48px;
-top: 48px;
-z-index: 3;
-font-size: 12px;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-mix-blend-mode: screen;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 112px;
+background: rgba(0,0,0,0.94);
+z-index: 5;
+display: flex;
+align-items: center;
+overflow: hidden;
+border-top: 1px solid rgba(255,255,255,0.06);
 }
 
+.subtitle-track {
+display: inline-block;
+white-space: nowrap;
+font-family: "IBM Plex Mono", monospace;
+font-size: clamp(36px, 4.5vw, 64px);
+letter-spacing: 0.08em;
+color: rgba(255,255,255,0.92);
+animation: horizontal-loop 24s linear infinite;
+padding-left: 100%;
+}
+
+.subtitle-track span {
+display: inline-block;
+margin-right: 1.4em;
+}
+
+@keyframes horizontal-loop {
+from {
+transform: translateX(0);
+}
+to {
+transform: translateX(-50%);
+}
+}
+
+/* MOBILE */
 @media (max-width: 900px) {
 .photo-card {
-width: 48vw;
-top: 20px;
-left: 20px;
+width: 42vw;
+top: 36px;
+left: 28px;
 }
 
 .credits-window {
-width: 50vw;
-padding-right: 18px;
-padding-left: 12px;
+width: 64vw;
+padding-right: 24px;
+}
+
+.credits {
+right: 24px;
+font-size: clamp(22px, 2.8vw, 34px);
+}
+
+.subtitle-bar {
+height: 92px;
 }
 }
 
 @media (max-width: 680px) {
+.site-title {
+top: 18px;
+left: 18px;
+}
+
 .photo-card {
-width: calc(100vw - 40px);
+top: 44px;
+left: 18px;
+width: calc(100vw - 36px);
 height: 42vh;
 aspect-ratio: auto;
 }
 
 .credits-window {
-position: absolute;
-right: 0;
+width: 100%;
+height: calc(100vh - 96px);
 top: 0;
-width: 65vw;
-overflow: hidden;
-padding: 0 40px;
+right: 0;
+padding: 0 18px;
 }
 
 .credits {
-font-size: 18px;
-max-width: 650px;
+width: calc(100vw - 36px);
+right: 18px;
+bottom: -160%;
+font-size: 22px;
+line-height: 1.24;
 }
 
-.site-title {
-left: 32px;
-top: 32px;
+.subtitle-bar {
+height: 96px;
+}
+
+.subtitle-track {
+font-size: 34px;
 }
 }
 </style>
 </head>
 <body>
+<div class="bg-wrap">
 <div class="bg"></div>
+</div>
 
-<div class="layout">
+<div class="page">
 <div class="site-title">Lydia Miligkou</div>
 
 <div class="photo-card">
-<img src="iroes.jpg" alt="Placeholder image" />
+<img src="photo.jpg" alt="Lydia placeholder image">
 </div>
 
 <div class="credits-window">
 <div class="credits">
+<!-- Replace these with your own selected lines locally -->
 <p>Ήρωες, άπαρτα βουνά</p>
 <p>Ήρωες, με δώδεκα ζωές</p>
 <p>Κάστρα του Ολύμπου</p>
 <p>Και του Παρνασσού φαντάσματα</p>
 <p>Ήρωες μες στα χαλάσματα</p>
-<p>Κάστρα του Ολύμπου</p>
-<p>Και του Παρνασσού φαντάσματα</p>
-<p>Ήρωες μες στα χαλάσματα</p>
+
+<p>&nbsp;</p>
+
 <p>Αίματα, κόκκινο νερό</p>
 <p>Αίματα, ποτάμι βουερό</p>
 <p>Πυρ στην Αλαμάνα</p>
 <p>Και φωτιά στο Γοργοπόταμο</p>
-<p>Και φωτιά στο Γοργοπόταμο</p>
-<p>Πυρ στην Αλαμάνα</p>
-<p>Και φωτιά στο Γοργοπόταμο</p>
-<p>Και φωτιά στο Γοργοπόταμο</p>
+
+<p>&nbsp;</p>
+
 <p>Εμπρός αδέρφια εμπρός</p>
 <p>Κι είναι μαζί μας ο λαός</p>
 <p>Στα πιο μεγάλα μας τα κατορθώματα</p>
 <p>Μες στις πέτρες και στα χώματα</p>
+
+<p>&nbsp;</p>
+
 <p>Θάνατος, μαύρος αδερφός</p>
 <p>Θάνατος, θα γίνω αθάνατος</p>
-<p>Πυρ στην Αλαμάνα</p>
-<p>Και φωτιά στο Γοργοπόταμο</p>
-<p>Και φωτιά στο Γοργοπόταμο</p>
-<p>Πυρ στην Αλαμάνα</p>
-<p>Και φωτιά στο Γοργοπόταμο</p>
-<p>Και φωτιά στο Γοργοπόταμο</p>
 <p>Αέρας στις κορφές</p>
 <p>Μαύρο φεγγάρι στις καρδιές</p>
-<p>Έλα και πάρ' τη μόνος σου τη λευτεριά</p>
-<p>Με τραγούδια, όπλα και σπαθιά, έι!</p>
-<p>Με τραγούδια, όπλα και σπαθιά, έι!</p>
-<p>Με τραγούδια, όπλα και σπαθιά, έι!</p>
-<p>Με τραγούδια, όπλα και σπαθιά, έι!</p>
-<p>Με τραγούδια, όπλα και σπαθιά!</p>
 
-<!-- repeat once for smoother loop -->
-<p style="margin-top: 2em;">Ήρωες, άπαρτα βουνά</p>
+<p>&nbsp;</p>
+
+<p>Έλα και πάρ’ τη μόνος σου τη λευτεριά</p>
+<p>Με τραγούδια, όπλα και σπαθιά</p>
+
+<p>&nbsp;</p>
+
+<!-- duplicate for seamless loop -->
+<p>Ήρωες, άπαρτα βουνά</p>
 <p>Ήρωες, με δώδεκα ζωές</p>
 <p>Κάστρα του Ολύμπου</p>
 <p>Και του Παρνασσού φαντάσματα</p>
 <p>Ήρωες μες στα χαλάσματα</p>
+
+<p>&nbsp;</p>
+
 <p>Αίματα, κόκκινο νερό</p>
+<p>Αίματα, ποτάμι βουερό</p>
 <p>Πυρ στην Αλαμάνα</p>
+<p>Και φωτιά στο Γοργοπόταμο</p>
+
+<p>&nbsp;</p>
+
 <p>Εμπρός αδέρφια εμπρός</p>
+<p>Κι είναι μαζί μας ο λαός</p>
+<p>Στα πιο μεγάλα μας τα κατορθώματα</p>
+<p>Μες στις πέτρες και στα χώματα</p>
+
+<p>&nbsp;</p>
+
+<p>Θάνατος, μαύρος αδερφός</p>
 <p>Θάνατος, θα γίνω αθάνατος</p>
 <p>Αέρας στις κορφές</p>
-<p>Με τραγούδια, όπλα και σπαθιά!</p>
+<p>Μαύρο φεγγάρι στις καρδιές</p>
+
+<p>&nbsp;</p>
+
+<p>Έλα και πάρ’ τη μόνος σου τη λευτεριά</p>
+<p>Με τραγούδια, όπλα και σπαθιά</p>
+</div>
+</div>
+
+<div class="subtitle-bar">
+<div class="subtitle-track">
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
+<span>Σ’ αγαπώ</span>
 </div>
 </div>
 </div>
