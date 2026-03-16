@@ -23,15 +23,12 @@ position: relative;
 color: white;
 }
 
-/* Big same photo as blue background */
 .bg {
 position: fixed;
 inset: 0;
-background:
-linear-gradient(rgba(20, 40, 120, 0.45), rgba(20, 40, 120, 0.45)),
-url("iroes.jpg") center center / cover no-repeat;
-filter: saturate(1.1) contrast(1.02);
-transform: scale(1.05);
+background:url("iroes.jpg") center/cover no-repeat;
+filter: blur(35px) brightness(0.6);
+transform: scale(1.1);
 }
 
 /* dark veil so text stays readable */
