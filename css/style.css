@@ -131,6 +131,13 @@ right: 12%;
 top: 48vh;
 }
 
+.artwork--still-spinning {
+width: min(26vw, 360px);
+right: 56%;
+top: 88vh;
+}
+
+
 /* TABLET */
 
 @media (max-width: 1100px) {
@@ -148,13 +155,6 @@ top: 24vh;
 width: min(23vw, 220px);
 right: 10%;
 top: 50vh;
-}
-
-
-.artwork--still-spinning {
-width: min(26vw, 360px);
-right: 10%;
-top: 68vh;
 }
 }
 
