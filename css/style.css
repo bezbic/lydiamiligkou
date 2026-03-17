@@ -204,10 +204,6 @@ background: #f4f1ea;
 color: #1f1d1a;
 }
 
-.project-page .site-header {
-position: fixed;
-}
-
 .project {
 width: 100%;
 max-width: 1100px;
@@ -215,75 +211,90 @@ margin: 0 auto;
 padding: 140px 40px 180px;
 }
 
+/* intro */
+
 .project-intro {
 max-width: 520px;
-margin: 0 auto 56px;
+margin: 0 auto 42px;
 }
 
 .project-intro h1 {
 margin: 0;
-font-size: 1.1rem;
+font-size: 1.2rem;
 font-weight: 500;
-letter-spacing: 0.04em;
-line-height: 1.3;
+letter-spacing: 0.03em;
+line-height: 1.25;
 }
 
 .project-year {
-margin: 8px 0 0 0;
-font-size: 0.9rem;
-opacity: 0.6;
+margin: 10px 0 0 0;
+font-size: 0.82rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+opacity: 0.55;
 }
 
+/* text */
+
 .project-text {
-max-width: 520px;
-margin: 0 auto 100px;
+max-width: 470px;
+margin: 0 auto 110px;
+transform: translateX(-24px);
+}
+
+.project-text::before {
+content: "";
+display: block;
+width: 42px;
+height: 1px;
+background: rgba(31, 29, 26, 0.25);
+margin-bottom: 24px;
 }
 
 .project-text p {
 margin: 0;
-font-size: 0.95rem;
-line-height: 1.7;
+font-size: 1rem;
+line-height: 1.85;
+letter-spacing: 0.01em;
 }
 
+/* images */
+
 .project-image {
-margin: 0 0 88px 0;
+margin-bottom: 120px;
 }
 
 .project-image img {
 display: block;
-width: min(62vw, 760px);
+width: min(52vw, 640px);
 max-width: 100%;
 height: auto;
 }
 
-/* first image slightly bigger and centered */
+/* first image slightly larger */
+
 .project-image:first-of-type img {
-width: min(70vw, 860px);
+width: min(58vw, 720px);
 margin-left: auto;
 margin-right: auto;
 }
 
-/* gentle zig-zag */
+/* zig-zag layout */
+
 .project-image:nth-of-type(odd) img {
-margin-left: 0;
+margin-left: 8%;
 margin-right: auto;
 }
 
 .project-image:nth-of-type(even) img {
 margin-left: auto;
-margin-right: 0;
+margin-right: 8%;
 }
 
-/* keep intro/text centered */
-.project-intro,
-.project-text {
-position: relative;
-z-index: 2;
-}
-
-/* MOBILE PROJECT PAGE */
+/* mobile */
 
 @media (max-width: 900px) {
+
 .project {
 padding: 110px 20px 120px;
 }
@@ -291,26 +302,18 @@ padding: 110px 20px 120px;
 .project-intro,
 .project-text {
 max-width: 100%;
-}
-
-.project-intro h1 {
-font-size: 1rem;
-}
-
-.project-text p {
-font-size: 0.92rem;
-line-height: 1.65;
-}
-
-.project-image {
-margin-bottom: 48px;
+transform: none;
 }
 
 .project-image img,
 .project-image:first-of-type img {
 width: 100%;
-max-width: 100%;
 margin-left: auto;
 margin-right: auto;
 }
+
+.project-image {
+margin-bottom: 60px;
+}
+
 }
