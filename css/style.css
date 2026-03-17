@@ -237,7 +237,7 @@ margin: 160px 0;
 }
 
 .project-image img {
-width: 70%;
+max-width: 900px;
 height: auto;
 display: block;
 }
