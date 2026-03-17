@@ -149,6 +149,13 @@ width: min(23vw, 220px);
 right: 10%;
 top: 50vh;
 }
+
+
+.artwork--still-spinning {
+width: min(26vw, 360px);
+right: 10%;
+top: 68vh;
+}
 }
 
 /* MOBILE HOMEPAGE */
