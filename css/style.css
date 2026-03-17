@@ -21,7 +21,7 @@ font-family: Arial, Helvetica, sans-serif;
 }
 
 .homepage {
-overflow: hidden;
+overflow-x: hidden;
 }
 
 /* HEADER */
