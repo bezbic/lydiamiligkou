@@ -123,15 +123,15 @@ color: var(--muted);
 /* POSITIONS — LAPTOP FIRST */
 
 .artwork--sweat-lack {
-width: min(34vw, 430px);
-left: 12%;
-top: 24vh;
+width: min(42vw, 650px);
+left: 10%;
+top: 22vh;
 }
 
 .artwork--whale {
-width: min(18vw, 220px);
-right: 18%;
-top: 46vh;
+width: min(28vw, 650px);
+right: 12%;
+top: 48vh;
 }
 
 /* TABLET */
