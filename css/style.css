@@ -119,19 +119,19 @@ color: var(--muted);
 
 /* POSITIONS — LAPTOP FIRST */
 
-.artwork--sweat-lack {
+.artwork--1 {
 width: min(42vw, 650px);
 left: 10%;
 top: 22vh;
 }
 
-.artwork--whale {
+.artwork--2 {
 width: min(28vw, 650px);
 right: 12%;
 top: 48vh;
 }
 
-.artwork--still-spinning {
+.artwork--3 {
 width: min(26vw, 360px);
 right: 56%;
 top: 88vh;
@@ -145,13 +145,13 @@ top: 88vh;
 padding: 0 2rem;
 }
 
-.artwork--sweat-lack {
+.artwork--1 {
 width: min(38vw, 400px);
 left: 9%;
 top: 24vh;
 }
 
-.artwork--whale {
+.artwork--2 {
 width: min(23vw, 220px);
 right: 10%;
 top: 50vh;
