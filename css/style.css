@@ -66,7 +66,7 @@ opacity: 0.6;
 .canvas {
 position: relative;
 width: 100%;
-min-height: 160vh;
+min-height: 420vh;
 }
 
 /* ARTWORKS */
@@ -137,6 +137,35 @@ right: 56%;
 top: 88vh;
 }
 
+.artwork--4 {
+width: min(34vw, 520px);
+left: 32%;
+top: 118vh;
+}
+
+.artwork--5 {
+width: min(38vw, 600px);
+left: 14%;
+top: 176vh;
+}
+
+.artwork--6 {
+width: min(24vw, 380px);
+left: 18%;
+top: 246vh;
+}
+
+.artwork--7 {
+width: min(22vw, 320px);
+right: 14%;
+top: 278vh;
+}
+
+.artwork--8 {
+width: min(30vw, 460px);
+left: 20%;
+top: 336vh;
+}
 
 /* TABLET */
 
