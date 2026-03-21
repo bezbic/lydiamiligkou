@@ -133,7 +133,7 @@ body {
 
 .marquee-item {
   font-family: 'Fragment Mono', monospace;
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   font-size: 0.7rem;
   letter-spacing: 0.16em;
