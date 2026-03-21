@@ -107,9 +107,6 @@ body {
   opacity: 0.45;
 }
 
-  to   { transform: translateX(-50%); }
-}
-
 /* ─── CANVAS ─────────────────────────────────────── */
 
 .canvas {
@@ -225,7 +222,7 @@ body {
 .artwork--5 {
   width: min(38vw, 600px);
   left: 14%;
-  top: 176vh;
+  top: 185vh;
 }
 
 .artwork--6 {
