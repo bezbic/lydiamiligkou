@@ -133,7 +133,7 @@ body {
 
 .marquee-item {
   font-family: 'Fragment Mono', monospace;
-  font-style: normal;
+  font-style: italic;
   font-weight: 400;
   font-size: 0.7rem;
   letter-spacing: 0.16em;
@@ -424,7 +424,7 @@ body.project-page {
   font-family: 'Fragment Mono', monospace;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   letter-spacing: 0.06em;
   line-height: 1.5;
   max-width: 60%;
@@ -531,5 +531,74 @@ body.project-page {
   .pi--small img {
     width: 100%;
     margin-left: 0;
+  }
+}
+
+/* ─── CONTACT PAGE ───────────────────────────────── */
+
+body.contact-page {
+  background: var(--bg);
+  color: var(--text);
+  cursor: auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contact-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.contact-wave {
+  display: block;
+  width: 100%;
+  height: 120px;
+  color: var(--text);
+  opacity: 0.3;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem 2rem;
+  gap: 2rem;
+}
+
+.contact-item {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contact-item:hover {
+  opacity: 0.5;
+}
+
+.contact-year {
+  color: var(--muted);
+}
+
+@media (max-width: 780px) {
+  body.contact-page {
+    height: auto;
+    overflow: auto;
+  }
+
+  .contact-footer {
+    position: static;
+    margin-top: 40vh;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.2rem 3rem;
+    gap: 1rem;
   }
 }
