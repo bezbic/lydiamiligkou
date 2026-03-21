@@ -112,7 +112,7 @@ body {
 .canvas {
   position: relative;
   width: 100%;
-  min-height: 420vh;
+  min-height: 320vh;
   padding-bottom: 2rem;
 }
 
