@@ -332,9 +332,14 @@ body {
     padding: 0 1.2rem;
   }
 
+  .site-title,
+  .site-link {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
 
   .site-nav {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .canvas {
