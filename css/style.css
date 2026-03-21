@@ -220,21 +220,22 @@ body {
 }
 
 .artwork--5 {
-  width: min(38vw, 600px);
-  left: 14%;
+  width: min(40vw, 600px);
+  left: 8%;
   top: 185vh;
 }
 
 .artwork--6 {
-  width: min(24vw, 380px);
-  left: 18%;
-  top: 246vh;
+  width: min(36vw, 450px);
+  left: 60%;
+  transform: translateX(-50%);
+  top: 190vh;
 }
 
 .artwork--7 {
-  width: min(22vw, 320px);
-  right: 14%;
-  top: 278vh;
+  width: min(55vw, 600px);
+  left: 10%;
+  top: 245vh;
 }
 
 .artwork--8 {
