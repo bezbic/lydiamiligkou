@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Lydia Miligkou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="about-page">
 
+<header class="site-header">
+  <a href="index.html" class="site-title">LYDIA MILIGKOU</a>
+  <nav class="site-nav">
+    <a href="about.html" class="site-link">ABOUT</a>
+    <a href="contact.html" class="site-link">CONTACT</a>
+  </nav>
+</header>
+
+<main class="about-main">
+  <p class="about-text" id="aboutText"></p>
+</main>
+
+<script>
+  const text = 'Lydia Miligkou is a visual artist from Athens, GR.';
+  const el = document.getElementById('aboutText');
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      el.textContent += text[i];
+      i++;
+      setTimeout(type, 52);
+    }
+  }
+
+  // small delay before starting
+  setTimeout(type, 600);
+</script>
+
+</body>
+</html>
