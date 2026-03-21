@@ -107,51 +107,6 @@ body {
   opacity: 0.45;
 }
 
-/* ─── MARQUEE ────────────────────────────────────── */
-
-.marquee-wrap {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
-  overflow: hidden;
-  padding: 0.9rem 0;
-  border-top: 1px solid rgba(31, 29, 26, 0.1);
-  background: var(--bg);
-  /* subtle fade edges */
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee var(--marquee-speed) linear infinite;
-  gap: 0;
-}
-
-.marquee-item {
-  font-family: 'Fragment Mono', monospace;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  color: var(--muted);
-  white-space: nowrap;
-  padding: 0 0.6rem;
-}
-
-.marquee-sep {
-  font-family: 'Fragment Mono', monospace;
-  font-size: 0.7rem;
-  color: rgba(31, 29, 26, 0.25);
-  padding: 0 0.4rem;
-  align-self: center;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
@@ -161,7 +116,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 420vh;
-  padding-bottom: 6rem; /* clear marquee */
+  padding-bottom: 2rem;
 }
 
 /* ─── ARTWORK ENTRANCE ───────────────────────────── */
@@ -329,7 +284,8 @@ body {
 
   .site-header {
     top: 1.4rem;
-    padding: 0 1.2rem;
+    padding: 0 1.4rem;
+    gap: 1.5rem;
   }
 
   .site-title,
@@ -376,6 +332,10 @@ body.project-page {
 }
 
 /* ─── SIDEBAR ────────────────────────────────────── */
+
+.project-meta-mobile {
+  display: none;
+}
 
 .project-sidebar {
   position: fixed;
@@ -507,6 +467,15 @@ body.project-page {
 @media (max-width: 900px) {
   .project-sidebar {
     display: none;
+  }
+
+  .project-meta-mobile {
+    display: block;
+    margin-top: 0.6rem;
+    font-family: 'Fragment Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
   }
 
   .project {
