@@ -436,7 +436,7 @@ body.project-page {
 
 /* wide — full column width */
 .pi--wide img {
-  width: 100%;
+  width: 90%;
 }
 
 /* medium — roughly half */
