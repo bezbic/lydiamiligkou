@@ -685,3 +685,36 @@ body.about-page {
     text-align: right;
   }
 }
+
+/* ─── SITE CREDIT ────────────────────────────────── */
+
+.site-credit {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.site-credit a {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.site-credit a:hover {
+  opacity: 0.5;
+}
+
+.project-page .site-credit {
+  position: static !important;
+  left: auto !important;
+  transform: none !important;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
